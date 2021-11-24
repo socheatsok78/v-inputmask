@@ -1,0 +1,14 @@
+{
+  "name": "v-inputmask",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:socheatsok78/v-inputmask.git",
+  "author": "Socheat Sok <alex@socheat.net>",
+  "license": "MIT",
+  "dependencies": {
+    "inputmask": "^5.0.6"
+  },
+  "devDependencies": {
+    "vue": "^2.6.14"
+  }
+}
