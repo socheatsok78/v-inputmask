@@ -5,10 +5,14 @@
   "repository": "git@github.com:socheatsok78/v-inputmask.git",
   "author": "Socheat Sok <alex@socheat.net>",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc src/index.ts --outDir dist"
+  },
   "dependencies": {
     "inputmask": "^5.0.6"
   },
   "devDependencies": {
+    "@socheatsok78/tsconfig": "^0.1.0",
     "@types/inputmask": "^5.0.1",
     "vue": "^2.6.14"
   }

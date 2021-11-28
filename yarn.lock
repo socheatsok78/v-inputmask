@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@socheatsok78/tsconfig@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@socheatsok78/tsconfig/-/tsconfig-0.1.0.tgz#5ce4c8b3bb0190ade833ecae1414f4cbd1689a76"
+  integrity sha512-4DieAjS24KCtfsvvYZEFvpZRK1jiKgjLipsSQq20yI+rYK287Iu7Hz3Ac8sHGchakGulq2t+/ICXfJEfUHANxQ==
+
 "@types/inputmask@^5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@types/inputmask/-/inputmask-5.0.1.tgz#b9bbac61270a76338116114f66e93b24afd94b1d"
