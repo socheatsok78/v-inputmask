@@ -7,7 +7,7 @@ const defaultOptions: InputMask.Options = {
   showMaskOnHover: false,
 }
 
-const events = ['paste', 'cut']
+const imEventMap = ['paste', 'cut']
 
 export const vInputmask: DirectiveOptions = {
   bind(el, binding, vnode) {
@@ -34,10 +34,10 @@ export const vInputmask: DirectiveOptions = {
     im.mask(el)
 
     // Fix copy/cut/paste issues
-    events.forEach(evt => {
+    imEventMap.forEach(evt => {
       el.addEventListener(evt, () => {
-        el.dispatchEvent(event('input'))
-        el.dispatchEvent(event('change'))
+        el.dispatchEvent(event('input'))  // v-model
+        el.dispatchEvent(event('change')) // v-model.lazy
       }, { once: true })
     })
   },
