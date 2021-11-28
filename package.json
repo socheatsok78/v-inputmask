@@ -6,6 +6,14 @@
   "repository": "git@github.com:socheatsok78/v-inputmask.git",
   "author": "Socheat Sok <socheatsok78@gmail.com>",
   "license": "MIT",
+  "directories": {
+    "lib": "dist",
+    "types": "types"
+  },
+  "files": [
+    "dist",
+    "types"
+  ],
   "scripts": {
     "clean": "rm -rf dist",
     "prebuild": "yarn clean",
