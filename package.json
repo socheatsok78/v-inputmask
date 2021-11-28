@@ -1,8 +1,8 @@
 {
   "name": "@socheatsok78/v-inputmask",
   "version": "0.1.0",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/umd/index.js",
+  "types": "dist/umd/index.d.ts",
   "repository": "git@github.com:socheatsok78/v-inputmask.git",
   "author": "Socheat Sok <socheatsok78@gmail.com>",
   "license": "MIT",
@@ -19,6 +19,9 @@
     "prebuild": "yarn clean",
     "build": "rollup -c",
     "bump:release": "yarn version"
+  },
+  "peerDependencies": {
+    "inputmask": "*"
   },
   "dependencies": {
     "inputmask": "^5.0.6"
