@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@types/inputmask@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@types/inputmask/-/inputmask-5.0.1.tgz#b9bbac61270a76338116114f66e93b24afd94b1d"
+  integrity sha512-pV43uU+Tm//GlLV+tXE0DhDWPvqi/sJBW8Y9BetK8LWo+o39ldVEo649R23Oypl/AIGsZasPlOgr/liR64oCoA==
+
 inputmask@^5.0.6:
   version "5.0.6"
   resolved "https://registry.yarnpkg.com/inputmask/-/inputmask-5.0.6.tgz#c537a197b0c15ff926db4c2ea654f9768015b1c4"

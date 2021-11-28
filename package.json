@@ -9,6 +9,7 @@
     "inputmask": "^5.0.6"
   },
   "devDependencies": {
+    "@types/inputmask": "^5.0.1",
     "vue": "^2.6.14"
   }
 }
