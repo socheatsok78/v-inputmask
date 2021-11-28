@@ -1,8 +1,8 @@
-import type { DirectiveFunction, DirectiveOptions } from 'vue'
-import InputMask from 'inputmask'
+import type { DirectiveOptions } from 'vue'
+import Inputmask from "inputmask";
 import { assign, event } from '../utils'
 
-const defaultOptions: InputMask.Options = {
+const defaultOptions: Inputmask.Options = {
   autoUnmask: true,
   showMaskOnHover: false,
 }

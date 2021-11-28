@@ -17,7 +17,9 @@ function config ({ name, input, format, minify, ext = 'js' }) {
       name,
       format,
       sourcemap: true,
-      globals: {}
+      globals: {
+        inputmask: 'Inputmask'
+      }
     },
     plugins: [
       json(),
