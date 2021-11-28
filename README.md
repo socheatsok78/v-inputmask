@@ -18,7 +18,7 @@ yarn add @socheatsok78/v-inputmask
 </template>
 ```
 
-> Other options can be found on [Inputmask GitHub repo](https://github.com/RobinHerbots/Inputmask).
+> Other options can be found on [Inputmask GitHub repo](https://github.com/RobinHerbots/Inputmask#usage).
 
 ## License
 Licensed under the [MIT license](LICENSE)
