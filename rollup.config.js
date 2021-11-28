@@ -21,9 +21,7 @@ function config ({ name, input, format, minify, ext = 'js' }) {
     },
     plugins: [
       json(),
-      nodeResolve({
-        browser: true
-      }),
+      nodeResolve(),
       commonjs(),
       typescript({
         tsconfig: './tsconfig.json',
