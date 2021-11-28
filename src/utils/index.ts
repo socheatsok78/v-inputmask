@@ -4,7 +4,9 @@ export function assign (defaults: InputMask.Options, extras: InputMask.Options):
   defaults = defaults || {}
   extras = extras || {}
   return Object.keys(defaults).concat(Object.keys(extras)).reduce(function (acc, val) {
-    acc[val] = extras[val] === undefined ? defaults[val] : extras[val]
+    (acc as any)[val] = (extras as any)[val] === undefined
+      ? (defaults as any)[val]
+      : (extras as any)[val]
     return acc
   }, {})
 }
