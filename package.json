@@ -2,7 +2,7 @@
   "name": "@socheatsok78/v-inputmask",
   "version": "0.1.2",
   "main": "dist/umd/index.js",
-  "types": "dist/umd/index.d.ts",
+  "types": "dist/umd/src/index.d.ts",
   "repository": "git@github.com:socheatsok78/v-inputmask.git",
   "author": "Socheat Sok <socheatsok78@gmail.com>",
   "license": "MIT",
