@@ -24,7 +24,7 @@ export const getInputElement = (el: HTMLElement) => {
     if (els.length !== 1) {
       console.error(new Error('v-inputmask requires 1 input, found ' + els.length))
     } else {
-      return el
+      el = els[0]
     }
   }
 
