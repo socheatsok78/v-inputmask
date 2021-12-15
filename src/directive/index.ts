@@ -42,6 +42,14 @@ export const vInputmask: DirectiveOptions = {
 
     const opts = assign(defaultOptions, binding.value)
     el.inputmask.option(opts)
+
+    // Fix copy/cut/paste issues
+    imEventMap.forEach(evt => {
+      el.addEventListener(evt, () => {
+        el.dispatchEvent(event('input'))  // v-model
+        el.dispatchEvent(event('change')) // v-model.lazy
+      }, { once: true })
+    })
   },
   unbind(el, binding, vnode) {
     el = getInputElement(el)
