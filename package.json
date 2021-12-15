@@ -6,6 +6,12 @@
   "repository": "git@github.com:socheatsok78/v-inputmask.git",
   "author": "Socheat Sok <socheatsok78@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "vue",
+    "vue-directive",
+    "inputmask",
+    "v-inputmask"
+  ],
   "directories": {
     "lib": "dist",
     "types": "types"
