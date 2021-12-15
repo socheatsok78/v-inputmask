@@ -1,6 +1,6 @@
 import type { DirectiveOptions } from 'vue'
 import Inputmask from "inputmask";
-import { assign, event } from '../utils'
+import { assign, event, getInputElement } from '../utils'
 
 const defaultOptions: Inputmask.Options = {
   autoUnmask: true,
@@ -16,15 +16,7 @@ export const vInputmask: DirectiveOptions = {
       return
     }
 
-    if (!(el instanceof HTMLInputElement)) {
-      const els = el.getElementsByTagName('input')
-      if (els.length !== 1) {
-        console.error(new Error('v-inputmask requires 1 input, found ' + els.length))
-      } else {
-        el = els[0]
-      }
-    }
-
+    el = getInputElement(el)
     if (!(el instanceof HTMLInputElement)) return
 
     const opts = assign(defaultOptions, binding.value)
@@ -41,7 +33,19 @@ export const vInputmask: DirectiveOptions = {
       }, { once: true })
     })
   },
+  update(el, binding, vnode) {
+    if (!binding.value) return
+
+    el = getInputElement(el)
+    if (!(el instanceof HTMLInputElement)) return
+    if (!el.inputmask) return
+
+    el.inputmask.option(binding.value)
+  },
   unbind(el, binding, vnode) {
+    el = getInputElement(el)
+    if (!(el instanceof HTMLInputElement)) return
+
     if (el.inputmask) {
       el.inputmask.remove()
     }

@@ -17,3 +17,16 @@ export function event (name: keyof DocumentEventMap) {
   evt.initEvent(name, true, true)
   return evt
 }
+
+export const getInputElement = (el: HTMLElement) => {
+  if (!(el instanceof HTMLInputElement)) {
+    const els = el.getElementsByTagName('input')
+    if (els.length !== 1) {
+      console.error(new Error('v-inputmask requires 1 input, found ' + els.length))
+    } else {
+      return el
+    }
+  }
+
+  return el
+}
