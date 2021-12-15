@@ -33,7 +33,7 @@ export const vInputmask: DirectiveOptions = {
       }, { once: true })
     })
   },
-  update(el, binding, vnode) {
+  componentUpdated(el, binding, vnode) {
     if (!binding.value) return
 
     el = getInputElement(el)
