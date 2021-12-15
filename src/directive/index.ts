@@ -47,6 +47,7 @@ export const vInputmask: DirectiveOptions = {
 
     // Don't update when option are equal
     if (deepEqual(cachedOpts!, opts)) return
+    cached.set(el, opts)
 
     el.inputmask.option(opts)
   },
@@ -56,5 +57,6 @@ export const vInputmask: DirectiveOptions = {
     if (!el.inputmask) return
 
     el.inputmask.remove()
+    cached.delete(el)
   }
 }
