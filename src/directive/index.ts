@@ -1,6 +1,6 @@
 import type { DirectiveOptions } from 'vue'
 import Inputmask from "inputmask";
-import { assign, event, getInputElement } from '../utils'
+import { assign, deepEqual, event, getInputElement } from '../utils'
 
 const defaultOptions: Inputmask.Options = {
   autoUnmask: true,
@@ -44,6 +44,9 @@ export const vInputmask: DirectiveOptions = {
 
     const cachedOpts = cached.get(el)
     const opts = assign(cachedOpts!, binding.value)
+
+    // Don't update when option are equal
+    if (deepEqual(cachedOpts!, opts)) return
 
     el.inputmask.option(opts)
   },
