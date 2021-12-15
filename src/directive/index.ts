@@ -40,7 +40,8 @@ export const vInputmask: DirectiveOptions = {
     if (!(el instanceof HTMLInputElement)) return
     if (!el.inputmask) return
 
-    el.inputmask.option(binding.value)
+    const opts = assign(defaultOptions, binding.value)
+    el.inputmask.option(opts)
   },
   unbind(el, binding, vnode) {
     el = getInputElement(el)
