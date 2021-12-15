@@ -8,6 +8,7 @@ const defaultOptions: Inputmask.Options = {
 }
 
 const imEventMap = ['paste', 'cut']
+const cached = new Map<HTMLElement, Inputmask.Options>()
 
 export const vInputmask: DirectiveOptions = {
   bind(el, binding, vnode) {
@@ -24,6 +25,7 @@ export const vInputmask: DirectiveOptions = {
 
     // Create a mask for the input
     im.mask(el)
+    cached.set(el, opts)
 
     // Fix copy/cut/paste issues
     imEventMap.forEach(evt => {
@@ -33,14 +35,15 @@ export const vInputmask: DirectiveOptions = {
       }, { once: true })
     })
   },
-  componentUpdated(el, binding, vnode) {
+  update(el, binding, vnode) {
     if (!binding.value) return
 
     el = getInputElement(el)
     if (!(el instanceof HTMLInputElement)) return
     if (!el.inputmask) return
 
-    const opts = assign(defaultOptions, binding.value)
+    const cachedOpts = cached.get(el)
+    const opts = assign(cachedOpts!, binding.value)
     el.inputmask.option(opts)
 
     // Fix copy/cut/paste issues
@@ -54,9 +57,8 @@ export const vInputmask: DirectiveOptions = {
   unbind(el, binding, vnode) {
     el = getInputElement(el)
     if (!(el instanceof HTMLInputElement)) return
+    if (!el.inputmask) return
 
-    if (el.inputmask) {
-      el.inputmask.remove()
-    }
+    el.inputmask.remove()
   }
 }
