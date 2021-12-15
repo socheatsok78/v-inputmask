@@ -1,6 +1,6 @@
 {
   "name": "@socheatsok78/v-inputmask",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "main": "dist/umd/index.js",
   "types": "dist/umd/src/index.d.ts",
   "repository": "git@github.com:socheatsok78/v-inputmask.git",
